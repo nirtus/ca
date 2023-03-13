@@ -2,6 +2,7 @@ from ultralytics import YOLO
 from torch.utils.data import DataLoader
 import shutil
 import os
+from _utils.helpers import *
 
 if __name__ == '__main__':
     epochs = 200  # number of epochs to train for
@@ -9,7 +10,7 @@ if __name__ == '__main__':
     batch_size = 32  # batch size
     save_period = 50 # save every 10 epochs
     name = str(epochs) + optimizer + str(batch_size)
-    model_source = f'runs/detect/{name}/weights/best.pt'
+    model_source = f'runs/detect/{name}/'
     model_destination = f'_models/{name}/'
 
     # Prepare data
@@ -42,7 +43,16 @@ if __name__ == '__main__':
     # Validate the model
     model.val()
 
-    # Export the model
+    # Export the model and training results
     if not os.path.exists(model_destination):
         os.makedirs(model_destination)
-        shutil.copy2(model_source, model_destination)
+
+    shutil.copy2(f'{model_source}/weights/best.pt', model_destination)
+    shutil.copy2(f'{model_source}/results.png', model_destination)
+    shutil.copy2(f'{model_source}/confusion_matrix.png', model_destination)
+
+    resize_image(f'{model_destination}/results.png', 30)
+    resize_image(f'{model_destination}/confusion_matrix.png', 30)
+ 
+
+

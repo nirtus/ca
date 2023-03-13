@@ -1,2 +1,3 @@
-/_data
-/runs
+*__pycache__
+_data
+runs
