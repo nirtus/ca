@@ -1,2 +1,1 @@
-# CodeAcademy
-## Object detection and tracking
+# Objects detection and tracking
