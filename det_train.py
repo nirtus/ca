@@ -45,7 +45,7 @@ if __name__ == '__main__':
         close_mosaic=True,
     )
 
-    # Export the model and training results
+    # Export model and training results
     if not os.path.exists(model_destination):
         os.makedirs(model_destination)
 
