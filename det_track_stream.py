@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO("_models/200Adam32/best.pt")  # load a pretrained model
+model = YOLO("_models/200Adam32-2/best.pt")  # load a pretrained model
 #model.device('cuda')
 
 # Open the default camera
