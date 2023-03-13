@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../_conda/envs/CA_CUDA/Lib/site-packages/ultralytics"
+		}
+	],
+	"settings": {}
+}
