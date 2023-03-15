@@ -5,7 +5,7 @@ import os
 from _utils.helpers import *
 
 if __name__ == '__main__':
-    epochs = 1  # number of epochs to train for
+    epochs = 100  # number of epochs to train for
     optimizer = 'Adam'  # optimizer to use
     batch_size = 48  # batch size
     save_period = 50 # save every 50 epochs
