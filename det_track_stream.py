@@ -1,16 +1,13 @@
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO("_models/200Adam32-2/best.pt")  # load a pretrained model
+model = YOLO("_models/100Adam48-4/best.pt")  # load a pretrained model
 #model.device('cuda')
 
-# Open the default camera
-#video = cv2.VideoCapture(0)
+model.track(device=0, source=0, show=False, tracker="botsort.yaml")
 
-#results = model.track(source=0, show=False, tracker="bytetrack.yaml")
-model.track(device=0, source=0, show=True, tracker="botsort.yaml")
 
-#print(results)
+
 
 # def show_stream():
 #     while True:
