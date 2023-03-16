@@ -1,11 +1,10 @@
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO("_models/100Adam48-4/best.pt")  # load a pretrained model
+model = YOLO("_models/200SGD32-2/best.pt")  # load a pretrained model
 #model.device('cuda')
 
-model.track(device=0, source=0, show=False, tracker="botsort.yaml")
-
+results = model.track(source=0, show=True, tracker="_cfg/botsort.yaml", line_thickness=2)
 
 
 
