@@ -1,15 +1,29 @@
-# Objects detection and tracking
+# Multiple detection and tracking
+
+Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
+
+Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT) and [ByteTrack](https://github.com/ifzhang/ByteTrack).
 
 ## Data
-- Batch 01
-    ![Batch 01](/_models/100Adam48-4/train_batch0.jpg)
-- [Batch 02](/_models/100Adam48-4/train_batch1.jpg)
-- [Batch 03](/_models/100Adam48-4/train_batch2.jpg)
+
+Data augmented with [RoboFlow](https://app.roboflow.com).
+
+Augmentations:
+- Rotation: Between -10° and +10°
+- Grayscale: Apply to 40% of images
+- Blur: Up to 4px
+
+Example 1
+    ![Example 1](/_models/100Adam48-4/train_batch0.jpg)
+
+[Example 2](/_models/100Adam48-4/train_batch1.jpg)
+
+[Example 3](/_models/100Adam48-4/train_batch2.jpg)
 
 ## Validation
-- Predictions
+Predictions
     ![Predictions](/_models/100Adam48-4/val_batch0_pred.jpg)
-- [Labels](/_models/100Adam48-4/val_batch0_labels.jpg)
+[Labels](/_models/100Adam48-4/val_batch0_labels.jpg)
 
 ## Training results
 - Adam, epochs 100 , batch 48, data_ver 4
@@ -34,5 +48,7 @@
 
 
 ## Tracking
+As tracking input webcamera feed was used. Results are displayed in video.
+
 [![Prediction and tracking](https://img.youtube.com/vi/8dvHar8VCfk/0.jpg)](https://www.youtube.com/watch?v=8dvHar8VCfk)
 
