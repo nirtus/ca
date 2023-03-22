@@ -1,4 +1,4 @@
-# Multiple detection and tracking
+# Object detection and tracking
 ## About
 Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
 
