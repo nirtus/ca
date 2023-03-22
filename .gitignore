@@ -1,5 +1,6 @@
 *__pycache__
 _data
+!_data/test_video.mp4
 vehicles-*
 runs
 yolov8n.pt
