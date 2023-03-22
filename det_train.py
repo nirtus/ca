@@ -5,11 +5,12 @@ import os
 from _utils.helpers import *
 
 if __name__ == '__main__':
+    # Trainer
     def train(epochs, optimizer, batch_size, save_period, data_version):
-        epochs = epochs  # number of epochs to train for
-        optimizer = optimizer  # optimizer to use
-        batch_size = batch_size  # batch size
-        save_period = save_period # save every 50 epochs
+        #epochs = epochs  # number of epochs to train for
+        #optimizer = optimizer  # optimizer to use
+        #batch_size = batch_size  # batch size
+        #save_period = save_period # save every 50 epochs
         device = 0 # CPU None, CUDA 0
         data_version = data_version
         name = str(epochs) + optimizer + str(batch_size) + '-' + str(data_version)
@@ -57,8 +58,9 @@ if __name__ == '__main__':
         resize_image(f'{model_destination}/results.png', 30)
         resize_image(f'{model_destination}/confusion_matrix.png', 30)
 
+    # Train models
     train(200, 'Adam', 48, 50, 4)
-    train(200, 'SGD', 48, 50, 4)
+    # train(200, 'SGD', 48, 50, 4)
 
-    train(200, 'Adam', 64, 50, 4)
-    train(200, 'SGD', 64, 50, 4)
+    # train(200, 'Adam', 64, 50, 4)
+    # train(200, 'SGD', 64, 50, 4)
