@@ -1,9 +1,0 @@
-Sveiki, dėl baigiamojo darbo kol kas turiu dvi mintis. Tikiuosi nepasirodys per paprasta. Kadangi domina objektų aptikimo tema:
-
-1. Vaizdo medžiagoje atpažinti objektus ir
-	a) nustatyti jų greitį;
-	b) suskaičiuoti objektų skaičių per laiką.
-
-Real life pvz: kamera seka autotransporto priemonių eismą;
-Priemonės: kamera, pc
-
