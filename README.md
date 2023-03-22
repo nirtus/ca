@@ -89,5 +89,6 @@ Predictions
 Webcamera feed was used as input for tracking.
 
 Results in video:
+
 [![Prediction and tracking](https://img.youtube.com/vi/8dvHar8VCfk/0.jpg)](https://www.youtube.com/watch?v=8dvHar8VCfk)
 
