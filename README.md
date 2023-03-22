@@ -1,7 +1,7 @@
 # Objects detection and tracking
 
 ## Data
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8dvHar8VCfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![IMAGE_ALT](https://img.youtube.com/vi/8dvHar8VCfk/0.jpg)](https://www.youtube.com/watch?v=8dvHar8VCfk)
 
 ### Training images examples
 ![Batch 01](/_models/100Adam48-4/train_batch0.jpg)
