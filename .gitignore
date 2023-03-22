@@ -1,6 +1,7 @@
 *__pycache__
 _data/*
 !_data/test_video.mp4
+_test/
 vehicles-*
-runs
+runs/
 yolov8n.pt
