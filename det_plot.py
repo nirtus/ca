@@ -32,7 +32,7 @@ def build_dots(reader, everyth, start, end):
 
 
 plot_tracks = []
-with open('_data/tracks.csv', mode='r') as file:
+with open('_data/_tracks/tracks.csv', mode='r') as file:
     # Create a CSV reader object
     reader = csv.reader(file)
 
@@ -51,9 +51,6 @@ zs = [dot[2] for dot in plot_tracks]
 ax.scatter(xs, ys, zs)
 
 # Set the axis labels
-# ax.set_xlabel('X Label')
-# ax.set_ylabel('Y Label')
-# ax.set_zlabel('Z Label')
 ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.set_zlabel('frame')

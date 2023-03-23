@@ -1,0 +1,7 @@
+car
+truck
+trolley
+bus
+motorcycle
+bicyle
+other

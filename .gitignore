@@ -1,5 +1,5 @@
 *__pycache__
-_data/
+_data/_backup
 !_data/test_video.mp4
 _test/
 !_data/_images/Figure_*

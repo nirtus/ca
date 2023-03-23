@@ -3,7 +3,7 @@ import csv
 
 
 # Clear file
-with open('_data/tracks.csv', mode='w', newline='') as file:
+with open('_data/_tracks/tracks.csv', mode='w', newline='') as file:
     file.write('')
 
 # Config
