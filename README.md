@@ -94,4 +94,4 @@ Results in video:
 
 ## Tracking Plots
 ![Figure 5](/_data/_images/Figure_5.png)
-[Figure 3](/_data/_images/Figure_3.png)
+![Figure 3](/_data/_images/Figure_3.png)
