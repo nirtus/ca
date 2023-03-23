@@ -1,10 +1,16 @@
 from ultralytics import YOLO
+import csv
+
+
+# Clear file
+with open('_data/tracks.csv', mode='w', newline='') as file:
+    file.write('')
 
 # Config
 model = YOLO("_models/200SGD32-2/best.pt")  # load a pretrained model
 cfg_tracker = "_cfg/botsort.yaml"
-camera_source = "_data/test_video.mp4"
-video_source = "_data/test_video.mp4"
+source_camera = 0
+source_video = "_data/test_video3.mp4"
 
 # Tracking
 def track(mdl, tracker, source):
@@ -12,5 +18,7 @@ def track(mdl, tracker, source):
 
 
 # Track either camera or saved video
-#camera_track = track(model, cfg_tracker, camera_source)
-video_track = track(model, cfg_tracker, video_source)
+camera = track(model, cfg_tracker, source_camera)
+#video = track(model, cfg_tracker, source_video)
+
+

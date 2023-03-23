@@ -1,8 +1,9 @@
 *__pycache__
-_data/*
+_data/
 !_data/test_video.mp4
-_test/*
+_test/
+!_data/_images/Figure_*
 vehicles-*
-runs/*
+runs
 Tasks.txt
 yolov8n.pt

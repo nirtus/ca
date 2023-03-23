@@ -92,3 +92,6 @@ Results in video:
 
 [![Prediction and tracking](https://img.youtube.com/vi/8dvHar8VCfk/0.jpg)](https://www.youtube.com/watch?v=8dvHar8VCfk)
 
+## Tracking Plots
+![Figure 5](/_data/_images/Figure_5.png)
+[Figure 3](/_data/_images/Figure_3.png)
