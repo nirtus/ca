@@ -102,6 +102,8 @@ To see some plots, run **det_plot.py** script. Track selection parameters:
 
 
 Example of detections during each frame:
-
-![Figure 5](/_data/_images/Figure_5.png)
+![Figure 1](/_data/_images/Figure_1.png)
+![Figure 2](/_data/_images/Figure_2.png)
 ![Figure 3](/_data/_images/Figure_3.png)
+![Figure 4](/_data/_images/Figure_4.png)
+![Figure 5](/_data/_images/Figure_5.png)

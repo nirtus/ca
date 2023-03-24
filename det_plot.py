@@ -12,7 +12,7 @@ def coord_format(frame, row):
         row_y = int(row_ex[2])
         return (640-row_x, 480-row_y, frame)
     else:
-        return(0, 0, frame)
+        return(None, None, frame)
 
 # Read CSV and return plot dots
 def build_dots(file, everyth, start, end):
@@ -37,11 +37,11 @@ def build_dots(file, everyth, start, end):
     return plot_tracks
 
 # Show plot
-def plot_show(dots):
+def plot_3d(dots):
+    #for dot in dots: print(dot[:2])
     # Create a figure and a 3D axis
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-
     # Create the scatter plot
     xs = [dot[0] for dot in dots]
     ys = [dot[1] for dot in dots]
@@ -56,19 +56,37 @@ def plot_show(dots):
     # Show the plot
     plt.show()
 
+def plot_2d(dots):
+    #for dot in dots: print(dot[:2])
+    # Split the x and y coordinates into separate lists
+    x = [dot[0] for dot in dots]
+    y = [dot[1] for dot in dots]
+
+    # Create scatter plot with dots
+    plt.scatter(x, y)
+
+    # Add labels and title
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Scatter plot with dots')
+
+    # Show plot
+    plt.show()
+
 
 # Plot parameteres
-everyth = 2
+everyth = 1
 start = 2000
 end = 3000
 
 # Plots
 dots = build_dots('predict_and_track_100Adam48.csv', everyth, start, end)
-plot_show(dots)
+#plot_3d(dots)
+plot_2d(dots)
 
 # dots = build_dots('predict_and_track_200Adam64.csv', everyth, start, end)
-# plot_show(dots)
+# plot_3d(dots)
 
 # dots = build_dots('predict_and_track_200SGD32.csv', everyth, start, end)
-# plot_show(dots)
+# plot_3d(dots)
 
