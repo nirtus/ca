@@ -59,16 +59,16 @@ def plot_show(dots):
 
 # Plot parameteres
 everyth = 2
-start = 1000
-end = 2000
+start = 2000
+end = 3000
 
 # Plots
 dots = build_dots('predict_and_track_100Adam48.csv', everyth, start, end)
 plot_show(dots)
 
-dots = build_dots('predict_and_track_200Adam64.csv', everyth, start, end)
-plot_show(dots)
+# dots = build_dots('predict_and_track_200Adam64.csv', everyth, start, end)
+# plot_show(dots)
 
-dots = build_dots('predict_and_track_200SGD32.csv', everyth, start, end)
-plot_show(dots)
+# dots = build_dots('predict_and_track_200SGD32.csv', everyth, start, end)
+# plot_show(dots)
 
