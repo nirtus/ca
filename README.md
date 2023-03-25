@@ -21,9 +21,7 @@ The following augmentation was applied to create 3 versions of each source image
 
 Example 1
 ![Example 1](/_models/100Adam48-4/train_batch0.jpg)
-
 [Example 2](/_models/100Adam48-4/train_batch1.jpg)
-
 [Example 3](/_models/100Adam48-4/train_batch2.jpg)
 
 
@@ -100,15 +98,13 @@ To see some plots, run **det_plot.py** script. Track selection parameters:
 - start - start selection from this row
 - end - end with this row
 
-
 Examples of detections in sequence of frames
-
 
 Dots represent center points of detected objects.
 
-
-![Figure 1](/_data/_images/Figure_1.png)
-![Figure 2](/_data/_images/Figure_2.png)
-![Figure 3](/_data/_images/Figure_3.png)
-![Figure 4](/_data/_images/Figure_4.png)
-![Figure 5](/_data/_images/Figure_5.png)
+![Figure 6](/_data/_images/Figure_6.png)
+[Figure 1](/_data/_images/Figure_1.png)
+[Figure 2](/_data/_images/Figure_2.png)
+[Figure 3](/_data/_images/Figure_3.png)
+[Figure 4](/_data/_images/Figure_4.png)
+[Figure 5](/_data/_images/Figure_5.png)
