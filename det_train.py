@@ -1,7 +1,10 @@
-from ultralytics import YOLO
-from torch.utils.data import DataLoader
-import shutil
 import os
+import shutil
+
+from roboflow import Roboflow
+from torch.utils.data import DataLoader
+from ultralytics import YOLO
+
 from _utils.helpers import *
 
 if __name__ == '__main__':
@@ -19,7 +22,6 @@ if __name__ == '__main__':
         model_destination = f'_models/{name}/'
 
         # Prepare data
-        from roboflow import Roboflow
         rf = Roboflow(api_key="oLeOSPCOjN2R94Eo6679")
         project = rf.workspace("codeacademy-kwv2t").project("vehicles-pol8y")
         dataset = project.version(data_version).download("yolov8")

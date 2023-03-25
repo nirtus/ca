@@ -96,12 +96,17 @@ Results in video:
 Tracks of detections in YouTube video are in **_data/tracks directory**.
 
 To see some plots, run **det_plot.py** script. Track selection parameters:
-- everyth - select only n-th track row
+- everynth - select only n-th track row
 - start - start selection from this row
 - end - end with this row
 
 
-Example of detections in sequence of frames:
+Examples of detections in sequence of frames
+
+
+Dots represent center points of detected objects.
+
+
 ![Figure 1](/_data/_images/Figure_1.png)
 ![Figure 2](/_data/_images/Figure_2.png)
 ![Figure 3](/_data/_images/Figure_3.png)
