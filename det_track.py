@@ -16,7 +16,7 @@ def track(mdl, tracker, source):
     mdl.track(source=source, show=True, tracker=tracker, line_thickness=2)
 
 # Track either camera or saved video
-#camera = track(model, cfg_tracker, source_camera)
-video = track(model, cfg_tracker, source_video)
+camera = track(model, cfg_tracker, source_camera)
+#video = track(model, cfg_tracker, source_video)
 
 

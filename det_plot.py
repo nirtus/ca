@@ -44,7 +44,7 @@ def tracks(file, everyth, start, end):
             else:
                 for line in row:
                     plot_tracks.append(track_format(line))
-                    #print(track_format(line))
+                    print(track_format(line))
             
     return plot_tracks
 
