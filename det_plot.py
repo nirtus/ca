@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import datetime
-from PIL import Image
+from PIL import Image, ImageDraw
 
 
 # Format and return line with coordinates
@@ -47,6 +47,13 @@ def tracks(file, everyth, start, end):
                     print(track_format(line))
             
     return plot_tracks
+
+# Define a color mapping function
+def color_map(value):
+    if value < 128:
+        return (255, 0, 0)    # red for low values
+    else:
+        return (0, 255, 0)    # green for high values
 
 # Plot types
 def plot_3d(dots):
@@ -147,7 +154,7 @@ def sns_scatter(df, x, y, track_file):
     img = Image.open('_data/_images/scene.png')
     # Calculate the new size based on the percentage
     # percent = 45
-    percent = 50
+    percent = 100
     width, height = img.size
     new_width = int(width * percent / 100)
     new_height = int(height * percent / 100)
@@ -155,9 +162,10 @@ def sns_scatter(df, x, y, track_file):
 
     # Resize the image
     img = img.resize((new_width, new_height))
+    #img = img.convert("RGB")
 
     # variables in the dataset
-    f, ax = plt.subplots(figsize=(6.5, 6.5))
+    f, ax = plt.subplots(figsize=(12.8, 7.8))
     ax.set_title(track_file)
     ax.set_xlabel('x')
     ax.set_ylabel('y')
@@ -167,8 +175,22 @@ def sns_scatter(df, x, y, track_file):
     
     ax.scatter(df[x], df[y], c=df['id'], s=6)
     # ax.scatter(df[x], df[y], c=df['id'], s=6)
-    plt.show()
-    img.save(f'_data/_images/{track_file}.png')
+    #plt.show()
+
+    # Save the plot to a file
+    plt.savefig(f'_data/_images/{track_file}.png')
+    # draw = ImageDraw.Draw(img)
+    # for _, row in df.iterrows():
+    #     id = int(row[0])
+    #     print(id)
+    #     draw.ellipse((row['x']-2, row['y']-2, row['x']+2, row['y']+1), fill=(id, id, id), outline=(id, id, id))
+
+    # img.show()
+
+    # Save the modified image to a new file
+    #img.save('path/to/image_with_dots.jpg')
+
+    #img.save(f'_data/_images/{track_file}.png')
     # sns.despine(f, left=True, bottom=True)
 
     # sns.scatterplot(
@@ -195,8 +217,8 @@ def draw_plots(track_file):
 
     #df = df[df['id'] == 13]
     #df = df[df['id'].between(12,13)]
-    df = df[df['x'] > 250]
-    df = df[df['y'] > 250]
+    #df = df[df['x'] > 250]
+    #df = df[df['y'] > 250]
     #print(df['id'])
     #track_file = sns_scatter_3d(df)
     #sns_scatter_3d(df, track_file)
@@ -223,15 +245,15 @@ track_files = [
     'test_video3_200SGD32-2',
     'test_video3_200SGD64-4']
 
-#draw_plots(track_files[0])
+# draw_plots(track_files[0])
 
 draw_plots(track_files[1])
-# draw_plots(track_files[2])
-# draw_plots(track_files[3])
-# draw_plots(track_files[4])
+draw_plots(track_files[2])
+draw_plots(track_files[3])
+draw_plots(track_files[4])
 
-# draw_plots(track_files[5])
-# draw_plots(track_files[6])
-# draw_plots(track_files[7])
-# draw_plots(track_files[8])
+draw_plots(track_files[5])
+draw_plots(track_files[6])
+draw_plots(track_files[7])
+draw_plots(track_files[8])
 
