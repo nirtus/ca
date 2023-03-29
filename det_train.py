@@ -45,7 +45,7 @@ if __name__ == '__main__':
             cache=True,
             exist_ok=True,
             val=True,
-            lr1=learning_rate,
+            lrf=learning_rate,
             pretrained=False,
             close_mosaic=True,
         )
