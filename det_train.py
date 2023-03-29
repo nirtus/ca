@@ -9,14 +9,14 @@ from _utils.helpers import *
 
 if __name__ == '__main__':
     # Trainer
-    def train(epochs, optimizer, batch_size, save_period, data_version):
+    def train(epochs, optimizer, batch_size, learning_rate, save_period, data_version):
         #epochs = epochs  # number of epochs to train for
         #optimizer = optimizer  # optimizer to use
         #batch_size = batch_size  # batch size
         #save_period = save_period # save every 50 epochs
         device = 0 # CPU None, CUDA 0
         data_version = data_version
-        name = str(epochs) + optimizer + str(batch_size) + '-' + str(data_version)
+        name = str(epochs) + optimizer + str(batch_size) + str(learning_rate) + '-' + str(data_version)
         data_path = f'/Development/_ca/vehicles-{data_version}/data.yaml'
         model_source = f'runs/detect/{name}/'
         model_destination = f'_models/{name}/'
@@ -45,7 +45,8 @@ if __name__ == '__main__':
             cache=True,
             exist_ok=True,
             val=True,
-            pretrained=True,
+            lr1=learning_rate,
+            pretrained=False,
             close_mosaic=True,
         )
 
@@ -61,8 +62,22 @@ if __name__ == '__main__':
         resize_image(f'{model_destination}/confusion_matrix.png', 30)
 
     # Train models
-    train(200, 'Adam', 48, 50, 4)
+    # train(200, 'Adam', 48, 50, 4)
     # train(200, 'SGD', 48, 50, 4)
 
     # train(200, 'Adam', 64, 50, 4)
     # train(200, 'SGD', 64, 50, 4)
+
+    train(20, 'Adam', 64, 0.01, 10, 1)
+    train(20, 'SGD', 64, 0.01, 10, 1)
+    train(20, 'Adam', 64, 0.01, 10, 2)
+    train(20, 'SGD', 64, 0.01, 10, 2)
+    train(20, 'Adam', 64, 0.01, 10, 4)
+    train(20, 'SGD', 64, 0.01, 10, 4)
+
+    train(20, 'Adam', 64, 0.05, 10, 1)
+    train(20, 'SGD', 64, 0.05, 10, 1)
+    train(20, 'Adam', 64, 0.05, 10, 2)
+    train(20, 'SGD', 64, 0.05, 10, 2)
+    train(20, 'Adam', 64, 0.05, 10, 4)
+    train(20, 'SGD', 64, 0.05, 10, 4)
