@@ -221,7 +221,7 @@ def draw_plots(track_file):
     #df = df[df['y'] > 250]
     #print(df['id'])
     #track_file = sns_scatter_3d(df)
-    #sns_scatter_3d(df, track_file)
+    sns_scatter_3d(df, track_file)
     #track_file(df)
     sns_scatter(df, 'x', 'y', track_file)
     # sns_scatter(df, 'x', 'time')
@@ -231,11 +231,10 @@ def draw_plots(track_file):
 #plt.show()
 
 # Data parameteres
-everynth = 2
+everynth = 3
 start = 0
 end = -1
 track_files = [
-    'tracks',
     'street_view2_100Adam48-4',
     'street_view2_200Adam64-4',
     'street_view2_200SGD32-2',
@@ -248,12 +247,12 @@ track_files = [
 # draw_plots(track_files[0])
 
 draw_plots(track_files[1])
-draw_plots(track_files[2])
-draw_plots(track_files[3])
-draw_plots(track_files[4])
+# draw_plots(track_files[2])
+# draw_plots(track_files[3])
+# draw_plots(track_files[4])
 
-draw_plots(track_files[5])
-draw_plots(track_files[6])
-draw_plots(track_files[7])
-draw_plots(track_files[8])
+# draw_plots(track_files[5])
+# draw_plots(track_files[6])
+# draw_plots(track_files[7])
+# draw_plots(track_files[8])
 
