@@ -62,22 +62,9 @@ if __name__ == '__main__':
         resize_image(f'{model_destination}/confusion_matrix.png', 30)
 
     # Train models
-    # train(200, 'Adam', 48, 50, 4)
-    # train(200, 'SGD', 48, 50, 4)
+    # epochs, optimizer, batch, lr, save, data
+    train(100, 'Adam', 64, 0.01, 20, 1)
+    train(100, 'SGD', 64, 0.01, 10, 1)
 
-    # train(200, 'Adam', 64, 50, 4)
-    # train(200, 'SGD', 64, 50, 4)
-
-    train(20, 'Adam', 64, 0.01, 10, 1)
-    train(20, 'SGD', 64, 0.01, 10, 1)
-    train(20, 'Adam', 64, 0.01, 10, 2)
-    train(20, 'SGD', 64, 0.01, 10, 2)
-    train(20, 'Adam', 64, 0.01, 10, 4)
-    train(20, 'SGD', 64, 0.01, 10, 4)
-
-    train(20, 'Adam', 64, 0.05, 10, 1)
-    train(20, 'SGD', 64, 0.05, 10, 1)
-    train(20, 'Adam', 64, 0.05, 10, 2)
-    train(20, 'SGD', 64, 0.05, 10, 2)
-    train(20, 'Adam', 64, 0.05, 10, 4)
-    train(20, 'SGD', 64, 0.05, 10, 4)
+    train(100, 'Adam', 64, 0.05, 10, 4)
+    train(100, 'SGD', 64, 0.05, 10, 4)
