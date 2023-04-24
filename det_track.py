@@ -13,7 +13,7 @@ source_video = "_data/_backup/street_view2.mp4" #predict_and_track
 
 # Tracking
 def track(mdl, tracker, source):
-    mdl.track(source=source, show=False, tracker=tracker, line_thickness=2)
+    mdl.track(source=source, show=True, tracker=tracker, line_thickness=2)
 
 # Track either camera or saved video
 camera = track(model, cfg_tracker, source_camera)

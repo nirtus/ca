@@ -122,7 +122,6 @@ def sns_scatter_3d(df, track_file):
     fig = plt.figure()
     ax = plt.axes(projection='3d')
 
-    #df = sns.load_dataset(df)
     x=[df['x']]
     y=[df['y']]
     z=[df['time']]
@@ -133,22 +132,6 @@ def sns_scatter_3d(df, track_file):
     ax.set_ylabel('y')
     ax.set_zlabel ('time')
     ax.scatter(x, y, z, c=obj_id)
-    #plt.show()
-
-
-    # #sns.set_style ("darkgrid")
-    # xs = [df['x']]
-    # ys = [df['y']]
-    # zs = [df['time']]
-    # id = [df['id']]
-
-    # seaborn_plot = plt.axes (projection='3d')
-    # #print (type (seaborn_plot))
-    # # seaborn_plot.scatter3D(xs, ys, zs, alpha=0.7)
-    # seaborn_plot.scatter3D(xs, ys, zs, c=id)
-    # seaborn_plot.set_xlabel ('x')
-    # seaborn_plot.set_ylabel ('y')
-    # seaborn_plot.set_zlabel ('time')
 
 def sns_scatter(df, x, y, track_file):
     img = Image.open('_data/_images/scene.png')
@@ -215,20 +198,9 @@ def draw_plots(track_file):
         columns = ["id", "type", "x", "y", "time"]
         )
 
-    #df = df[df['id'] == 13]
-    #df = df[df['id'].between(12,13)]
-    #df = df[df['x'] > 250]
-    #df = df[df['y'] > 250]
-    #print(df['id'])
-    #track_file = sns_scatter_3d(df)
     sns_scatter_3d(df, track_file)
-    #track_file(df)
     sns_scatter(df, 'x', 'y', track_file)
-    # sns_scatter(df, 'x', 'time')
-    # sns_scatter(df, 'y', 'time')
-    
-    plt.show()    
-#plt.show()
+    plt.show()
 
 # Data parameteres
 everynth = 3
@@ -244,15 +216,6 @@ track_files = [
     'test_video3_200SGD32-2',
     'test_video3_200SGD64-4']
 
-# draw_plots(track_files[0])
-
 draw_plots(track_files[1])
-# draw_plots(track_files[2])
-# draw_plots(track_files[3])
-# draw_plots(track_files[4])
 
-# draw_plots(track_files[5])
-# draw_plots(track_files[6])
-# draw_plots(track_files[7])
-# draw_plots(track_files[8])
 

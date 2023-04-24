@@ -7,6 +7,7 @@ Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT)
 ## How to use
 - Training is initiated by launching det_train.py
 - Tracking is initiated by launding det_track.py
+- **optional** To save detection and tracking result to file and DB overwrite YOLOv8 library with files in **_ultralytics** folder
 
 ## Data
 Data augmented with [RoboFlow](https://app.roboflow.com).
