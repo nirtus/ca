@@ -94,7 +94,7 @@ Results in video:
 ## Tracking Plots
 Tracks of detections in YouTube video are in **_data/tracks directory**.
 
-To see some plots, run **det_plot.py** script. Track selection parameters:
+To see some plots, run **det_plot_file.py** script. Track selection parameters:
 - everynth - select only n-th track row
 - start - start selection from this row
 - end - end with this row

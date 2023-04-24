@@ -216,6 +216,6 @@ track_files = [
     'test_video3_200SGD32-2',
     'test_video3_200SGD64-4']
 
-draw_plots(track_files[1])
+draw_plots(track_files[0])
 
 
