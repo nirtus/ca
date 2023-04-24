@@ -104,6 +104,7 @@ Examples of detections in sequence of frames
 Dots represent center points of detected objects.
 
 ![Figure 6](/_data/_images/Figure_6.png)
+![Figure 7](/_data/_images/Figure_7.png)
 [Figure 1](/_data/_images/Figure_1.png)
 [Figure 2](/_data/_images/Figure_2.png)
 [Figure 3](/_data/_images/Figure_3.png)
