@@ -8,7 +8,8 @@ from shapely.geometry import Point, Polygon
 everynth = 1 # show every other point (f.e. 3 - show every 3rd point)
 start = 0 # start point
 end = -1 # end point
-objectId = 12 # all objects. For specific object, change 0 to objectid 
+objectId = 2 # all objects. For specific object, change 0 to objectid 
+track_file_index = 5
 
 # Prerecorded tracking results for ploting
 track_files = [
@@ -165,4 +166,4 @@ def draw_plots(track_file):
     plt.show()
 
 # Draw plots
-draw_plots(track_files[0])
+draw_plots(track_files[track_file_index])
