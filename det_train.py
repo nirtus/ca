@@ -10,11 +10,7 @@ from _utils.helpers import *
 if __name__ == '__main__':
     # Trainer
     def train(epochs, optimizer, batch_size, learning_rate, save_period, data_version):
-        #epochs = epochs  # number of epochs to train for
-        #optimizer = optimizer  # optimizer to use
-        #batch_size = batch_size  # batch size
-        #save_period = save_period # save every 50 epochs
-        device = 0 # CPU None, CUDA 0
+        device = 0 # for CPU use None. For CUDA use 0 (or whichever number is CUDA enabled VGA on system)
         data_version = data_version
         name = str(epochs) + optimizer + str(batch_size) + str(learning_rate) + '-' + str(data_version)
         data_path = f'/Development/_ca/vehicles-{data_version}/data.yaml'
@@ -62,9 +58,8 @@ if __name__ == '__main__':
         resize_image(f'{model_destination}/confusion_matrix.png', 30)
 
     # Train models
-    # epochs, optimizer, batch, lr, save, data
+    # epochs, optimizer, batch, learning rate, save rate, data version
     train(100, 'Adam', 64, 0.01, 20, 1)
-    train(100, 'SGD', 64, 0.01, 10, 1)
-
-    train(100, 'Adam', 64, 0.05, 10, 4)
-    train(100, 'SGD', 64, 0.05, 10, 4)
+    # train(100, 'SGD', 64, 0.01, 10, 1)
+    # train(100, 'Adam', 64, 0.05, 10, 4)
+    # train(100, 'SGD', 64, 0.05, 10, 4)
