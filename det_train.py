@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     # Train models
     # epochs, optimizer, batch, learning rate, save rate, data version
-    train(100, 'Adam', 64, 0.01, 20, 1)
-    # train(100, 'SGD', 64, 0.01, 10, 1)
-    # train(100, 'Adam', 64, 0.05, 10, 4)
-    # train(100, 'SGD', 64, 0.05, 10, 4)
+    train(100, 'Adam', 64, 0.01, 20, 4)
+    # train(100, 'SGD', 64, 0.01, 10, 4)
+    # train(100, 'Adam', 64, 0.05, 10, 1)
+    # train(100, 'SGD', 64, 0.05, 10, 1)

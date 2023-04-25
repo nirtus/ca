@@ -15,8 +15,13 @@ Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
 Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT) and [ByteTrack](https://github.com/ifzhang/ByteTrack).
 
 ## How to use
-- Training is initiated by launching det_train.py
-- Tracking is initiated by launding det_track.py
+- Training is initiated by launching **det_train.py**
+    - Default: epochs 100, optimizer 'Adam', batch size 64, lr 0.01, save every 20 eopch, data version 4
+- Tracking is initiated by launding **det_track.py**
+    - Default: video source **_data/_video/test_video3.mp4**
+- Plotting is initiatd by launching **det_plot_file.py**
+    - Default: prerecorded detections from **_data/_tracks/test_video3_200Adam64-4.csv**
+    - Read more about plotting in **Tracking Plots** section
 - **optional** To save detection and tracking result to file and/or DB overwrite YOLOv8 library with files in **_ultralytics** folder
 
 ## Data
