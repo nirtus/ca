@@ -1,4 +1,14 @@
 # Object detection and tracking
+Project's goal is to find out objects speed and objects count using custom trained models and tracking.
+
+Workflow:
+- Prepare dataset
+- Train model
+- Track objects
+- Save tracking results to file and/or DB
+- Calculate objects speed in certain sector using recorded results
+- Calculate objects count using recorded results
+
 ## About
 Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
 
@@ -7,18 +17,18 @@ Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT)
 ## How to use
 - Training is initiated by launching det_train.py
 - Tracking is initiated by launding det_track.py
-- **optional** To save detection and tracking result to file and DB overwrite YOLOv8 library with files in **_ultralytics** folder
+- **optional** To save detection and tracking result to file and/or DB overwrite YOLOv8 library with files in **_ultralytics** folder
 
 ## Data
 Data augmented with [RoboFlow](https://app.roboflow.com).
 
 The dataset includes 862 images.
-Vehicles are annotated in YOLOv8 format.
+Objects are annotated in YOLOv8 format.
 
 The following augmentation was applied to create 3 versions of each source image:
 - Random rotation of between -10 and +10 degrees
 - Random Gaussian blur of between 0 and 4 pixels
-- Grayscale: Apply to 40% of images
+- Grayscale: Applied to 40% of images
 
 Example 1
 ![Example 1](/_models/100Adam48-4/train_batch0.jpg)
