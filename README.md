@@ -76,6 +76,8 @@ Example 1
 
 
 ## Training
+To run training change **project_folder** value in "det_train.py" file
+
 Hyper parameters used during training:
 | Parameter | Value |
 | --------- | ----- |

@@ -7,13 +7,15 @@ from ultralytics import YOLO
 
 from _utils.helpers import *
 
+project_folder = 'D:/Development/_ca' # Change this to actual project folder
+
 if __name__ == '__main__':
     # Trainer
     def train(epochs, optimizer, batch_size, learning_rate, save_period, data_version):
         device = 0 # for CPU use None. For CUDA use 0 (or whichever number is CUDA enabled VGA on system)
         data_version = data_version
         name = str(epochs) + optimizer + str(batch_size) + str(learning_rate) + '-' + str(data_version)
-        data_path = f'/Development/_ca/vehicles-{data_version}/data.yaml'
+        data_path = f'{project_folder}/vehicles-{data_version}/data.yaml'
         model_source = f'runs/detect/{name}/'
         model_destination = f'_models/{name}/'
 
