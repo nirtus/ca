@@ -6,11 +6,13 @@ from PIL import Image, ImageDraw, ImageFont
 from shapely.geometry import Point, Polygon
 
 # Data parameteres
+objectId = 2 # 0 - all objects. For specific object, change 0 to objectid
 everynth = 1 # show every other point (f.e. 3 - show every 3rd point)
-objectId = 2 # all objects. For specific object, change 0 to objectid 
 
 # Prerecorded tracking results for ploting
-track_file = 'test_video2_200Adam64-4.csv'
+#track_file = 'test_video_200Adam64-4.csv'
+#track_file = 'test_video2_200Adam64-4.csv'
+track_file = 'test_video3_200Adam64-4.csv'
 
 # Read CSV and return pandas df
 def tracks(everynth = 1):
@@ -44,11 +46,6 @@ def tracks(everynth = 1):
     df['timestamp'] = df['timestamp'].astype(float)
     return df
 
-# # Check dataframe
-# df = tracks()
-# rows_by_objectid = df[df['id'] == objectId]
-# print(rows_by_objectid)
-
 # Define a color mapping function
 def color_map(value):
     if value < 128:
@@ -58,7 +55,7 @@ def color_map(value):
 
 # Plot types
 # Note: plot images are saved into "_data/images" folder. Image name is same as track_file
-def scatter_3d(df, track_file):
+def scatter_3d(df):
     fig = plt.figure()
     ax = plt.axes(projection='3d')
 
@@ -73,7 +70,30 @@ def scatter_3d(df, track_file):
     ax.set_zlabel ('timestamp')
     ax.scatter(x, y, z, c=obj_id)
 
-def scatter(df, x, y, track_file):
+def scatter(df):
+    img = Image.open('_data/_images/scene.png')
+    draw = ImageDraw.Draw(img)
+
+    # Calculate the new size based on the percentage
+    percent = 100
+    width, height = img.size
+    new_width = int(width * percent / 100)
+    new_height = int(height * percent / 100)
+    print(new_width, new_height)
+    # Resize the image
+    img = img.resize((new_width, new_height))
+
+    # variables in the dataset
+    f, ax = plt.subplots(figsize=(12.8, 7.8))
+    ax.set_title(track_file)
+
+    ax.imshow(img)
+
+    ax.scatter(df['x'], df['y'], c=df['id'], s=6)
+    # Save the plot to a file
+    plt.savefig(f'_data/_images/{track_file}.png')
+
+def scatter_speed(df):
     img = Image.open('_data/_images/scene.png')
     draw = ImageDraw.Draw(img)
     width, height = img.size
@@ -131,8 +151,14 @@ def draw_plots():
     # Data Frame
     df = tracks(everynth)
 
-    scatter_3d(df, track_file)
-    scatter(df, 'x', 'y', track_file)
+    # Calculate speed if specific object selected
+    if objectId != 0:
+        df = df[df['id'] == objectId]
+        scatter_speed(df)
+    else:
+        scatter(df)
+    
+    scatter_3d(df)
 
     plt.show()
 
