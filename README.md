@@ -102,7 +102,6 @@ Hyper parameters used during training:
 | scale | 0.5 |
 | fliplr | 0.5 |
 | mosaic | 1.0 |
-|||
 
 - Adam, epochs 100 , batch 48, data_ver 4
 ![Adam, epochs 100 , batch 48, data_ver 4](/_models/100Adam48-4/results.png)
@@ -145,7 +144,6 @@ Tracking parameters:
 | cmc_method | sparseOptFlow |
 | proximity_thresh | 0.5 |
 | appearance_thresh | 0.25 |
-|||
 
 To change tracking parameters edit file "_cfg/botsort/yaml"
 
