@@ -17,7 +17,7 @@ test_video3, object id 2
 ![test_video3, object id 2](/_data/_images/scatter_speed_test_video3_200Adam64-4.csv.png)
 
 test_video2, object id 0 (0 means all objects)
-![test_video2, object id 0](/_data/_images/scatter_test_video2_200Adam64-4.csv)
+![test_video2, object id 0](/_data/_images/scatter_test_video2_200Adam64-4.csv.png)
 
 ## How to use 
 ### Training:
