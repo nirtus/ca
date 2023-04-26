@@ -1,6 +1,11 @@
 # Object detection and tracking
 Project's goal is to find out objects speed and objects count using custom trained models and tracking.
 
+## Situation
+Some vehicles at first glance appear to be driving above legal limit.
+Camera was installed to observe intersection exit and collect data.
+
+
 Workflow:
 - Prepare dataset
 - Train model
@@ -9,7 +14,7 @@ Workflow:
 - Calculate objects speed in certain sector using recorded results
 - Calculate objects count using recorded results
 
-## About
+## Techstack
 Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
 
 Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT) and [ByteTrack](https://github.com/ifzhang/ByteTrack).

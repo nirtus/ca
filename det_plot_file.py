@@ -9,15 +9,7 @@ start = 0 # start point
 end = -1 # end point
 
 # Prerecorded tracking results for ploting
-track_files = [
-    'street_view2_100Adam48-4',
-    'street_view2_200Adam64-4',
-    'street_view2_200SGD32-2',
-    'street_view2_200SGD64-4',
-    'test_video3_100Adam48-4',
-    'test_video3_200Adam64-4',
-    'test_video3_200SGD32-2',
-    'test_video3_200SGD64-4']
+track_file = 'test_video3_200Adam64-4.csv'
 
 # Format and return line with coordinates
 def track_format(row):
@@ -32,9 +24,9 @@ def track_format(row):
         return (id, type, x, y, time)
 
 # Read CSV and return plot dots
-def tracks(file, everyth, start, end):
+def tracks(everyth, start, end):
     plot_tracks = []
-    with open('_data/_tracks/' + file + '.csv', mode='r') as file:
+    with open('_data/_tracks/' + track_file, mode='r') as file:
         # Create a CSV reader object
         reader = csv.reader(file)
 
@@ -99,10 +91,10 @@ def scatter(df, x, y, track_file):
     plt.savefig(f'_data/_images/{track_file}.png')
 
 # List of plots
-def draw_plots(track_file):
+def draw_plots():
     # Data Frame
     df = pd.DataFrame(
-        tracks(track_file, everynth, start, end),
+        tracks(everynth, start, end),
         columns = ["id", "type", "x", "y", "time"]
     )
 
@@ -112,4 +104,4 @@ def draw_plots(track_file):
     plt.show()
 
 # Draw plots
-draw_plots(track_files[0])
+draw_plots()
