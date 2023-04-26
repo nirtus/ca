@@ -23,6 +23,8 @@ test_video2, object id 0 (0 means all objects)
 ### Training:
 Training is initiated by launching **det_train.py**
 
+Change **project_folder** value in "det_train.py" file
+
 Default parameters: epochs 100, optimizer 'Adam', batch size 64, lr 0.01, save every 20th epoch, dataset version 4
 
 ### Tracking:
@@ -76,8 +78,6 @@ Example 1
 
 
 ## Training
-To run training change **project_folder** value in "det_train.py" file
-
 Hyper parameters used during training:
 | Parameter | Value |
 | --------- | ----- |
