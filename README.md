@@ -9,30 +9,15 @@ Camera was installed to observe intersection exit and collect data.
 Model was trained to recognise vehicles and track them.
 Tracking results were saved to csv files. And objects speed in sector next to intersection exit was calculated.
 
-### Examples of speed detection
+### Examples of speed and objects count detection 
 test_video, object id 2
 ![test_video, object id 2](/_data/_images/scatter_speed_test_video_200Adam64-4.csv.png)
 
 test_video3, object id 2
 ![test_video3, object id 2](/_data/_images/scatter_speed_test_video3_200Adam64-4.csv.png)
 
-## Techstack
-Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
-
-Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT) and [ByteTrack](https://github.com/ifzhang/ByteTrack).
-
-### Python libraries:
-- csv
-- pandas
-- ast
-- matplotlib
-- PIL
-- shapely
-- os
-- ultralytics
-- shutil
-- roboflow
-- torch
+test_video2, object id 0 (0 means all objects)
+![test_video2, object id 0](/_data/_images/scatter_test_video2_200Adam64-4.csv)
 
 ## How to use 
 ### Training:
@@ -53,6 +38,24 @@ Plotting is initiatd by launching **det_plot_file.py**
 Default object id: 2 (0 - all objects, other than 0 - specific object by id)
 
 Default detections file: test_video3_200Adam64-4.csv (more example detections can be found in "_data/_tracks" directory)
+
+## Techstack
+Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
+
+Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT) and [ByteTrack](https://github.com/ifzhang/ByteTrack).
+
+### Python libraries:
+- csv
+- pandas
+- ast
+- matplotlib
+- PIL
+- shapely
+- os
+- ultralytics
+- shutil
+- roboflow
+- torch
 
 ## Data
 Data augmented with [RoboFlow](https://app.roboflow.com).
@@ -134,6 +137,8 @@ Results can be seen in video:
 
 [![Prediction and tracking](https://img.youtube.com/vi/8dvHar8VCfk/0.jpg)](https://www.youtube.com/watch?v=8dvHar8VCfk)
 
+To record tracks into csv file overwrite ultralytics **library** file "_ultralytics/tracer/track.py" with file in "_ultralytics/track.py"
+
 ## Tracking Plots
 
 Examples of detections in sequence of frames
@@ -146,3 +151,11 @@ Dots represent center points of detected objects.
 [Figure 3](/_data/_images/Figure_3.png)
 [Figure 4](/_data/_images/Figure_4.png)
 [Figure 5](/_data/_images/Figure_5.png)
+
+## Plans for future
+This solution is proof of concept and several improvements could be made for future use:
+- better quality video capture device
+- better trained model for more object detection and tracking
+- increase speed detection sectors count (currently 1) for speed change progresion monitoring
+- update code to be able detect multiple objects speed at once
+- update code to be able save detections into DataBase or file without directly updating YOLO library file
