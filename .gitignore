@@ -4,7 +4,6 @@ _data/_backup
 _test/
 !_data/_images/Figure_*
 vehicles-*
-_sql/
 runs
 Tasks.txt
 yolov8n.pt
