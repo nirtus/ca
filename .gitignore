@@ -4,8 +4,9 @@ _data/_backup
 _test/
 !_data/_images/Figure_*
 vehicles-*
-_sql
+_sql/
 runs
 Tasks.txt
 yolov8n.pt
 det_plot_db.py
+det_plot_file.py
