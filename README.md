@@ -101,6 +101,7 @@ Hyper parameters used during training:
 | scale | 0.5 |
 | fliplr | 0.5 |
 | mosaic | 1.0 |
+|||
 
 - Adam, epochs 100 , batch 48, data_ver 4
 ![Adam, epochs 100 , batch 48, data_ver 4](/_models/100Adam48-4/results.png)
@@ -131,12 +132,30 @@ Predictions
 
 
 ## Tracking
+Tracking parameters:
+| Parameter | Value |
+| --------- | ----- |
+| tracker_type | botsort |
+| track_high_thresh | 0.6 |
+| track_low_thresh | 0.1 | 
+| new_track_thresh | 0.7 |
+| track_buffer | 30 |
+| match_thresh | 0.8 |
+| cmc_method | sparseOptFlow |
+| proximity_thresh | 0.5 |
+| appearance_thresh | 0.25 |
+|||
+
+To change tracking parameters edit file "_cfg/botsort/yaml"
+
+### Testing results
 To test detection and tracking webcamera feed was used as input.
 
 Results can be seen in video:
 
 [![Prediction and tracking](https://img.youtube.com/vi/8dvHar8VCfk/0.jpg)](https://www.youtube.com/watch?v=8dvHar8VCfk)
 
+### Recording
 To record tracks into csv file overwrite ultralytics **library** file "_ultralytics/tracer/track.py" with file in "_ultralytics/track.py"
 
 ## Tracking Plots
