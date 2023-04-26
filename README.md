@@ -1,41 +1,66 @@
 # Object detection and tracking
-Project's goal is to find out objects speed and objects count using custom trained models and tracking.
+Project goal is to find out objects speed and objects count using custom trained models and tracking.
 
-## Situation
-Some vehicles at first glance appear to be driving above legal limit.
+## Problem
+Some vehicles, at first glance, appear to be driving above legal limit, especialy then traffic lights are about to change.
+
+## Solution
 Camera was installed to observe intersection exit and collect data.
+Model was trained to recognise vehicles and track them.
+Tracking results were saved to csv files. And objects speed in sector next to intersection exit was calculated.
 
+### Examples of speed detection
+test_video, object id 2
+![test_video, object id 2](/_data/_images/scatter_speed_test_video_200Adam64-4.csv.png)
 
-Workflow:
-- Prepare dataset
-- Train model
-- Track objects
-- Save tracking results to file and/or DB
-- Calculate objects speed in certain sector using recorded results
-- Calculate objects count using recorded results
+test_video3, object id 2
+![test_video3, object id 2](/_data/_images/scatter_speed_test_video3_200Adam64-4.csv.png)
 
 ## Techstack
 Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
 
 Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT) and [ByteTrack](https://github.com/ifzhang/ByteTrack).
 
-## How to use
-- Training is initiated by launching **det_train.py**
-    - Default: epochs 100, optimizer 'Adam', batch size 64, lr 0.01, save every 20 eopch, data version 4
-- Tracking is initiated by launding **det_track.py**
-    - Default: video source **_data/_video/test_video3.mp4**
-- Plotting is initiatd by launching **det_plot_file.py**
-    - Default: prerecorded detections from **_data/_tracks/test_video3_200Adam64-4.csv**
-    - Read more about plotting in **Tracking Plots** section
-- **optional** To save detection and tracking result to file and/or DB overwrite YOLOv8 library with files in **_ultralytics** folder
+### Python libraries:
+- csv
+- pandas
+- ast
+- matplotlib
+- PIL
+- shapely
+- os
+- ultralytics
+- shutil
+- roboflow
+- torch
+
+## How to use 
+### Training:
+Training is initiated by launching **det_train.py**
+
+Default parameters: epochs 100, optimizer 'Adam', batch size 64, lr 0.01, save every 20th epoch, dataset version 4
+
+### Tracking:
+Tracking is initiated by launching **det_track.py**
+
+Default model: 200Adam64-4 (more pretrained models in can be found in "_models" direcory)
+
+Default video source: _data/_video/test_video3.mp4
+
+### Ploting:
+Plotting is initiatd by launching **det_plot_file.py**
+
+Default object id: 2 (0 - all objects, other than 0 - specific object by id)
+
+Default detections file: test_video3_200Adam64-4.csv (more example detections can be found in "_data/_tracks" directory)
 
 ## Data
 Data augmented with [RoboFlow](https://app.roboflow.com).
 
-The dataset includes 862 images.
+The dataset consists of 862 images.
 Objects are annotated in YOLOv8 format.
 
-The following augmentation was applied to create 3 versions of each source image:
+The following augmentations were applied to create 3 dataset versions:
 - Random rotation of between -10 and +10 degrees
 - Random Gaussian blur of between 0 and 4 pixels
 - Grayscale: Applied to 40% of images
@@ -56,7 +81,6 @@ Hyper parameters used during training:
 | iou | 0.7 |
 | max_det | 300 |
 | vid_stride | 1 |
-| lr0 | 0.01 |
 | lrf | 0.01 |
 | momentum | 0.937 |
 | weight_decay | 0.0005 |
@@ -85,7 +109,6 @@ Hyper parameters used during training:
 - [SGD, epochs 200 , batch 64, data_ver 4](/_models/200SGD64-4/results.png)
 
 
-
 ## Confusion matrix
 
 - Adam, epochs 100 , batch 48, data_ver 4
@@ -105,24 +128,17 @@ Predictions
 
 
 ## Tracking
-Webcamera feed was used as input for tracking.
+To test detection and tracking webcamera feed was used as input.
 
-Results in video:
+Results can be seen in video:
 
 [![Prediction and tracking](https://img.youtube.com/vi/8dvHar8VCfk/0.jpg)](https://www.youtube.com/watch?v=8dvHar8VCfk)
 
 ## Tracking Plots
-Tracks of detections in YouTube video are in **_data/tracks directory**.
-
-To see some plots, run **det_plot_file.py** script. Track selection parameters:
-- everynth - select only n-th track row
-- start - start selection from this row
-- end - end with this row
 
 Examples of detections in sequence of frames
 
 Dots represent center points of detected objects.
-
 ![Figure 6](/_data/_images/Figure_6.png)
 ![Figure 7](/_data/_images/Figure_7.png)
 [Figure 1](/_data/_images/Figure_1.png)

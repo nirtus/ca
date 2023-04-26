@@ -70,6 +70,8 @@ def scatter_3d(df):
     ax.set_zlabel ('timestamp')
     ax.scatter(x, y, z, c=obj_id)
 
+    plt.savefig(f'_data/_images/scatter_3d_{track_file}.png')
+
 def scatter(df):
     img = Image.open('_data/_images/scene.png')
     draw = ImageDraw.Draw(img)
@@ -91,7 +93,7 @@ def scatter(df):
 
     ax.scatter(df['x'], df['y'], c=df['id'], s=6)
     # Save the plot to a file
-    plt.savefig(f'_data/_images/{track_file}.png')
+    plt.savefig(f'_data/_images/scatter_{track_file}.png')
 
 def scatter_speed(df):
     img = Image.open('_data/_images/scene.png')
@@ -141,10 +143,9 @@ def scatter_speed(df):
 
     ax.imshow(img)
  
-
     ax.scatter(df['x'], df['y'], c=df['id'], s=6)
     # Save the plot to a file
-    plt.savefig(f'_data/_images/{track_file}.png')
+    plt.savefig(f'_data/_images/scatter_speed_{track_file}.png')
 
 # List of plots
 def draw_plots():

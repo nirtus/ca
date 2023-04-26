@@ -1,6 +1,5 @@
 import os
 from ultralytics import YOLO
-import csv
 
 # Config
 model_name = '200Adam64-4'
@@ -8,7 +7,7 @@ tracker = '_cfg/botsort.yaml' # select tracker configuration
 save_tracks_to = '_data/_tracks'
 
 # Video source - path to video file or camera device number (f.e. 0)
-video = '_data/_video/test_video2.mp4'
+video = '_data/_video/test_video3.mp4'
 # Available prerecorded videos:
 # - test_video.mp4
 # - test_video2.mp4
