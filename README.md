@@ -41,6 +41,7 @@ Default detections file: test_video3_200Adam64-4.csv (more example detections ca
 
 ## Techstack
 Object detection model trained using [YOLOv8](https://docs.ultralytics.com).
+Model was chosen because of required speed during objects detection process.
 
 Object tracking realised using [BoT-SORT](https://github.com/NirAharon/BoT-SORT) and [ByteTrack](https://github.com/ifzhang/ByteTrack).
 
