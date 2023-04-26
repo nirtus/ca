@@ -2,7 +2,7 @@
 Project goal is to find out objects speed and objects count using custom trained models and tracking.
 
 ## Problem
-Some vehicles, at first glance, appear to be driving above legal limit, especialy then traffic lights are about to change.
+Some vehicles, at first glance, appear to be driving above legal limit, especially when traffic lights are about to change.
 
 ## Solution
 Camera was installed to observe intersection exit and collect data.
@@ -174,6 +174,6 @@ Dots represent center points of detected objects.
 This solution is proof of concept and several improvements could be made for future use:
 - better quality video capture device
 - better trained model for more object detection and tracking
-- increase speed detection sectors count (currently 1) for speed change progresion monitoring
+- increase speed detection sectors count (currently 1) for speed change progression monitoring
 - update code to be able detect multiple objects speed at once
 - update code to be able save detections into DataBase or file without directly updating YOLO library file
