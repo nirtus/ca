@@ -7,7 +7,7 @@ def object_data(object_id):
     server = 'BITUTE'
     database = 'ca'
     username = 'ca'
-    password = 'catraffic'
+    password = '****'
     conn = pyodbc.connect('DRIVER={SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
     # Define the SQL query as a string with a parameter placeholder
     sql_query = "EXEC calculate_delta_speed ?"
